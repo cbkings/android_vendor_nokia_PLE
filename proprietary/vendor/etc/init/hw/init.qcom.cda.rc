@@ -19,9 +19,8 @@ on fs
     exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.pre-cda.sh
 
 on property:sys.boot_completed=1
-    losetup /dev/block/cdrom-loop /hidden/custom.iso
-    write /sys/devices/soc/78db000.usb/msm_hsusb/gadget/lun0/file /dev/block/cdrom-loop
-    restorecon_recursive /dev/block/cdrom-loop
+    write /sys/devices/soc/78db000.usb/msm_hsusb/gadget/lun0/file /hidden/custom.iso
+    restorecon_recursive /hidden/custom.iso
     mkdir /data/app/preload 0771 system system
 
 # /data/misc/cust

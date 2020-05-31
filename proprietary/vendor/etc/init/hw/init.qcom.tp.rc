@@ -12,5 +12,4 @@ on boot
 	chmod 664 /proc/AllHWList/tp_gesture_available
 
 on post-fs-data
-	//write /proc/AllHWList/tp_gesture 0
 	write /proc/AllHWList/tp_upgrade 1
